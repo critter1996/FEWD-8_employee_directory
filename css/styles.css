@@ -27,9 +27,10 @@ header {
     border: 1px solid rgb(194, 194, 194);
     border-radius: 10px;
     padding: 3px;
+}
 
-    /* Add a hover state to the employee cards */
-
+.card:hover {
+    background-color: rgb(220, 220, 219);
 }
 
 .avatar {
