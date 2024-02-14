@@ -1,14 +1,15 @@
-/* header {
-    padding-left: 15px; 
-} */
-/* Need to line this up with grid */
+
+
+
 
 body {
     position: relative;
     background-color: rgb(243, 243, 243);
     }
 
-
+header {
+    padding-left: 80px; 
+}
 
 .grid-container {
     display: grid;
@@ -26,6 +27,8 @@ body {
     border: 1px solid rgb(194, 194, 194);
     border-radius: 10px;
     padding: 3px;
+
+    /* Add a hover state to the employee cards */
 
 }
 
