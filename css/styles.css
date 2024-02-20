@@ -11,6 +11,11 @@ header {
     padding-left: 80px; 
 }
 
+#searchContainer {
+    border-radius: .5rem;
+    /* background-color: #fff; */
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

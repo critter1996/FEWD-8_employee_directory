@@ -7,7 +7,9 @@ const overlay = document.querySelector(".overlay"); //stores the DOM element tha
 const modalContainer = document.querySelector(".modal-content"); //stores the DOM element that is a container for the modal info
 const modalClose = document.querySelector(".modal-close"); //stores the DOM element that is the modal’s close button
 
-
+//Search for User EC
+const searchContainer = document.getElementById('searchContainer');
+const searchInput = document.getElementById('searchField');
 
 
 // fetch data from API
@@ -81,3 +83,11 @@ function displayModal(index) {
         modalClose.addEventListener('click', () => {
             overlay.classList.add("hidden");
             });
+
+
+
+
+//////////////////////////Search////////////////////////////////
+
+
+searchInput.addEventListener 
