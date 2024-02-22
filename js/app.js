@@ -86,8 +86,20 @@ function displayModal(index) {
 
 
 
-
+//EC
 //////////////////////////Search////////////////////////////////
+// Add a way to filter the directory by name. 
+// To do this, you’ll need to request a random user nationality that will only return data in the English alphabet. 
+// Note: you don't have to rely on the API to return search results. 
+// You'll need to write functionality that filters out the results once they are on the page.
 
 
 searchInput.addEventListener 
+
+
+
+
+
+
+
+//Add a way to move back and forth between employee detail windows when the modal window is open.
