@@ -94,10 +94,20 @@ function displayModal(index) {
 // You'll need to write functionality that filters out the results once they are on the page.
 
 
-searchInput.addEventListener 
+searchInput.addEventListener('keyup', e => {
+    let searchText = e.target.value.toLowerCase();
+    let name = document.querySelector(".name");
 
-
-
+    name.forEach(card => {
+        //let text = card.getAttribute('data-caption');
+        if (name.toLowerCase().includes(searchText)) {
+            card.style.display = 'block';
+            console.log(searchText);
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
 
 
 
