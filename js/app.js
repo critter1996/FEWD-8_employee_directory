@@ -93,14 +93,16 @@ function displayModal(index) {
 // Note: you don't have to rely on the API to return search results. 
 // You'll need to write functionality that filters out the results once they are on the page.
 
+//Somehow needs to search through "employees" array
+
+
 
 searchInput.addEventListener('keyup', e => {
     let searchText = e.target.value.toLowerCase();
-    let name = document.querySelector(".name");
+    let card = document.querySelector(".card");
 
-    name.forEach(card => {
-        //let text = card.getAttribute('data-caption');
-        if (name.toLowerCase().includes(searchText)) {
+    employees.forEach(employee => {
+        if (employee.toLowerCase().includes(searchText)) {
             card.style.display = 'block';
             console.log(searchText);
         } else {
