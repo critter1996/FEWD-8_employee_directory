@@ -92,26 +92,17 @@ function displayModal(index) {
 // To do this, you’ll need to request a random user nationality that will only return data in the English alphabet. 
 // Note: you don't have to rely on the API to return search results. 
 // You'll need to write functionality that filters out the results once they are on the page.
-
-//Somehow needs to search through "employees" array
-
-
-
-searchInput.addEventListener('keyup', e => {
+////////////////
+searchInput.addEventListener('input', e => {
     let searchText = e.target.value.toLowerCase();
-    let card = document.querySelector(".card");
-
-    employees.forEach(employee => {
-        if (employee.toLowerCase().includes(searchText)) {
-            card.style.display = 'block';
-            console.log(searchText);
-        } else {
-            card.style.display = 'none';
-        }
+    let filteredList = employees.filter(employee => {
+      let fullName = `${employee.name.first} ${employee.name.last}`.toLowerCase();
+      return fullName.includes(searchText);
     });
-});
-
-
+    displayEmployees(filteredList);
+  });
+///////////////
+//Still need if it matches/includes then display, if not it goes back to normal
 
 
 //Add a way to move back and forth between employee detail windows when the modal window is open.
