@@ -97,12 +97,17 @@ searchInput.addEventListener('input', e => {
     let searchText = e.target.value.toLowerCase();
     let filteredList = employees.filter(employee => {
       let fullName = `${employee.name.first} ${employee.name.last}`.toLowerCase();
-      return fullName.includes(searchText);
+
+      if (fullName.includes(searchText)) {
+        return fullName.includes(searchText);
+      } 
     });
     displayEmployees(filteredList);
   });
 ///////////////
 //Still need if it matches/includes then display, if not it goes back to normal
+
+
 
 
 //Add a way to move back and forth between employee detail windows when the modal window is open.
