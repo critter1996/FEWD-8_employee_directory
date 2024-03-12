@@ -6,6 +6,8 @@ const gridContainer = document.querySelector(".grid-container"); //stores the DO
 const overlay = document.querySelector(".overlay"); //stores the DOM element that acts as an overlay for the modal
 const modalContainer = document.querySelector(".modal-content"); //stores the DOM element that is a container for the modal info
 const modalClose = document.querySelector(".modal-close"); //stores the DOM element that is the modal’s close button
+const arrowBack = document.getElementById('arrow_back');
+const arrowNext = document.getElementById('arrow_next');
 
 //Search for User EC
 const searchContainer = document.getElementById('searchContainer');
@@ -63,6 +65,8 @@ function displayModal(index) {
         <p>Birthday:
         ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
+        <button id="arrow_back">&lt; Back</button>  
+        <button id="arrow_next">Next &gt;</button> 
         `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
@@ -79,6 +83,17 @@ function displayModal(index) {
         }
         });
 
+
+
+
+        // arrowBack.onclick = () => {
+        //   displayModal(currentEmployeeIndex === 0 ? employees.length - 1 : currentEmployeeIndex - 1);
+        // };
+      
+        // arrowNext.onclick = () => {
+        //   displayModal(currentEmployeeIndex === employees.length - 1 ? 0 : currentEmployeeIndex + 1);
+        // };
+      
         
         modalClose.addEventListener('click', () => {
             overlay.classList.add("hidden");
@@ -96,11 +111,15 @@ function displayModal(index) {
 searchInput.addEventListener('input', e => {
     let searchText = e.target.value.toLowerCase();
     let filteredList = employees.filter(employee => {
-      let fullName = `${employee.name.first} ${employee.name.last}`.toLowerCase();
+    let fullName = `${employee.name.first} ${employee.name.last}`.toLowerCase();
 
       if (fullName.includes(searchText)) {
         return fullName.includes(searchText);
+         //else if searchbar is empty then do nothing, just display filtered employees
       } 
+      // else if (searchText = '') {
+      //   //displayEmployees;
+      // }
     });
     displayEmployees(filteredList);
   });
@@ -111,3 +130,9 @@ searchInput.addEventListener('input', e => {
 
 
 //Add a way to move back and forth between employee detail windows when the modal window is open.
+
+
+
+
+
+
