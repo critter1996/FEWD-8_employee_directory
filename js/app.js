@@ -70,6 +70,28 @@ function displayModal(index) {
         `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+
+//////////////////Extra Credit/////////////////////////////////////
+
+    if (parseInt(index) === 0) {
+        arrowBack.classList.add('hidden');
+        arrowBack.disabled = false;
+    }
+
+    if (parseInt(index) === 11) {
+        arrowNext.classList.add('hidden');
+        arrowNext.disabled = true;
+    }
+
+    arrowBack.addEventListener('click', e => {
+        displayModal(parseInt(index)-1);
+    });
+    
+    arrowNext.addEventListener('click', e => {
+        displayModal(parseInt(index)+1);
+    });
+/////////////////////////////////////////////////////////
+
     }
 
 
@@ -110,20 +132,18 @@ function displayModal(index) {
 ////////////////
 searchInput.addEventListener('input', e => {
     let searchText = e.target.value.toLowerCase();
-    let filteredList = employees.filter(employee => {
-    let fullName = `${employee.name.first} ${employee.name.last}`.toLowerCase();
-
-      if (fullName.includes(searchText)) {
-        return fullName.includes(searchText);
-         //else if searchbar is empty then do nothing, just display filtered employees
-      } 
-      // else if (searchText = '') {
-      //   //displayEmployees;
-      // }
-    });
-    displayEmployees(filteredList);
+    let allNames = document.getElementsByClassName("name");
+      
+      for (let i = 0; i < allNames.length; i++) {
+          let allNamesFilter = allNames[i].textContent.toLowerCase();
+          if (allNamesFilter.includes(searchText)) {
+              allNames[i].parentNode.parentNode.style.display = '';
+          } else {
+              allNames[i].parentNode.parentNode.style.display = 'none';
+          }
+      }
   });
-///////////////
+
 //Still need if it matches/includes then display, if not it goes back to normal
 
 
