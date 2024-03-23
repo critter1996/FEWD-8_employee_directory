@@ -61,7 +61,7 @@ function displayModal(index) {
         <p class="address">${city}</p>
         <hr />
         <p>${phone}</p>
-        <p class="address">${street}, ${state} ${postcode}</p>
+        <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
         <p>Birthday:
         ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
@@ -143,8 +143,6 @@ searchInput.addEventListener('input', e => {
           }
       }
   });
-
-//Still need if it matches/includes then display, if not it goes back to normal
 
 
 
