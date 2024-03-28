@@ -69,29 +69,31 @@ function displayModal(index) {
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
 
-//////////////////Extra Credit/////////////////////////////////////
+//////////////////Extra Credit -> Make back/Forward arrows work/////////////////////////////////////
 
-    let arrowBack = document.getElementById('arrow_back');
-    let arrowNext = document.getElementById('arrow_next');
+let arrowBack = document.getElementById('arrow_back');
+let arrowNext = document.getElementById('arrow_next');
 
+//////Hides the arrow back at the begining////
     if (parseInt(index) === 0) {
         arrowBack.classList.add('hidden');
         arrowBack.disabled = false;
     }
-
+///////Moves to the next slide///////////
+    arrowNext.addEventListener('click', e => {
+        displayModal(parseInt(index)+1);
+    });
+/////Moves to the previous slide/////////
+    arrowBack.addEventListener('click', e => {
+        displayModal(parseInt(index)-1);
+    });
+/////Hides the arrow forward/////////
     if (parseInt(index) === 11) {
         arrowNext.classList.add('hidden');
         arrowNext.disabled = true;
     }
 
-    arrowBack.addEventListener('click', e => {
-        displayModal(parseInt(index)-1);
-    });
-    
-    arrowNext.addEventListener('click', e => {
-        displayModal(parseInt(index)+1);
-    });
-/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 
