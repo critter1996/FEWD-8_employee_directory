@@ -6,13 +6,12 @@ const gridContainer = document.querySelector(".grid-container"); //stores the DO
 const overlay = document.querySelector(".overlay"); //stores the DOM element that acts as an overlay for the modal
 const modalContainer = document.querySelector(".modal-content"); //stores the DOM element that is a container for the modal info
 const modalClose = document.querySelector(".modal-close"); //stores the DOM element that is the modal’s close button
-
-//Search for User EC
+///////Search for User EC////////
 const searchContainer = document.getElementById('searchContainer');
 const searchInput = document.getElementById('searchField');
 
 
-// fetch data from API
+////////fetch data from API///////////
 fetch(urlAPI)
 .then(res => res.json())
 .then(res => res.results)
@@ -20,7 +19,7 @@ fetch(urlAPI)
 .catch(err => console.log(err))
 
 
-
+////////////////////////////////Displays a list of employees on the page//////////////////////////////
 function displayEmployees(employeeData) {
     employees = employeeData;
     // store the employee HTML as we create it
@@ -45,7 +44,7 @@ function displayEmployees(employeeData) {
     });
     gridContainer.innerHTML = employeeHTML;
 }
-
+///////////////////////////Displays selected employee in detail///////////////////////
 function displayModal(index) {
     // use object destructuring make our template literal cleaner
     let { name, dob, phone, email, location: { city, street, state, postcode
@@ -68,7 +67,7 @@ function displayModal(index) {
         `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////Extra Credit -> Make back/Forward arrows work/////////////////////////////////////
 
 let arrowBack = document.getElementById('arrow_back');
@@ -96,8 +95,7 @@ let arrowNext = document.getElementById('arrow_next');
 /////////////////////////////////////////////////////////////////////////////////////////////
 
     }
-
-
+//////////////Listens for a card(employee)to be clicked on before opening the modal
     gridContainer.addEventListener('click', e => {
         // make sure the click is not on the gridContainer itself
         if (e.target !== gridContainer) {
@@ -107,24 +105,13 @@ let arrowNext = document.getElementById('arrow_next');
         displayModal(index);
         }
         });
-
-
-
-
-        // arrowBack.onclick = () => {
-        //   displayModal(currentEmployeeIndex === 0 ? employees.length - 1 : currentEmployeeIndex - 1);
-        // };
-      
-        // arrowNext.onclick = () => {
-        //   displayModal(currentEmployeeIndex === employees.length - 1 ? 0 : currentEmployeeIndex + 1);
-        // };
       
         
         modalClose.addEventListener('click', () => {
             overlay.classList.add("hidden");
             });
 
-
+////////////////////////////////////////////////////////////////
 
 //EC
 //////////////////////////Search////////////////////////////////
@@ -146,11 +133,6 @@ searchInput.addEventListener('input', e => {
           }
       }
   });
-
-
-
-
-//Add a way to move back and forth between employee detail windows when the modal window is open.
 
 
 
