@@ -139,6 +139,33 @@ header h3 {
 
 
 @media screen and (min-width: 1024px) {
+    header {
+        display: flex;
+        max-width: 355px;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-content: center;
+        margin-left: 6%;
+    }
+    
+    header h3 {
+        display: flex;
+        font-size: larger;
+        align-items: flex-start;
+    
+    }
+
+    #pageName {
+        align-self: center;
+    }
+    
+    #searchContainer {
+        border-radius: .5rem;
+        align-items: flex-end;
+        margin-bottom: 15px;
+        align-self: center;
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
