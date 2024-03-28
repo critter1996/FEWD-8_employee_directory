@@ -6,8 +6,6 @@ const gridContainer = document.querySelector(".grid-container"); //stores the DO
 const overlay = document.querySelector(".overlay"); //stores the DOM element that acts as an overlay for the modal
 const modalContainer = document.querySelector(".modal-content"); //stores the DOM element that is a container for the modal info
 const modalClose = document.querySelector(".modal-close"); //stores the DOM element that is the modal’s close button
-const arrowBack = document.getElementById('arrow_back');
-const arrowNext = document.getElementById('arrow_next');
 
 //Search for User EC
 const searchContainer = document.getElementById('searchContainer');
@@ -72,6 +70,9 @@ function displayModal(index) {
     modalContainer.innerHTML = modalHTML;
 
 //////////////////Extra Credit/////////////////////////////////////
+
+    let arrowBack = document.getElementById('arrow_back');
+    let arrowNext = document.getElementById('arrow_next');
 
     if (parseInt(index) === 0) {
         arrowBack.classList.add('hidden');
