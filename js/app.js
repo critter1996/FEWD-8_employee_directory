@@ -60,7 +60,7 @@ function displayModal(index) {
         <p>${phone}</p>
         <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
         <p>Birthday:
-        ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+        ${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
         <button id="arrow_back">&lt; Back</button>  
         <button id="arrow_next">Next &gt;</button> 
